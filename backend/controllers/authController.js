@@ -13,7 +13,16 @@ const generateToken = (userId) => {
 1-register new user 
  */
 const register = (req, res) => {
-  const { username, email, password, role: roleName } = req.body;
+  const {
+    username,
+    firstName,
+    lastName,
+    country,
+    age,
+    email,
+    password,
+    role: roleName,
+  } = req.body;
   Role.findOne({ name: roleName })
     .then((roleDoc) => {
       if (!roleDoc) {
@@ -27,6 +36,10 @@ const register = (req, res) => {
 
       const user = new userModel({
         username,
+        firstName,
+        lastName,
+        age,
+        country,
         email: email.toLowerCase(),
         password,
         role: roleDoc._id,
@@ -91,7 +104,9 @@ const login = (req, res) => {
           token,
           user: {
             id: user._id,
-            username: user.username,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            age: user.age,
             role: user.role.name,
             permissions: user.role.permissions,
           },
