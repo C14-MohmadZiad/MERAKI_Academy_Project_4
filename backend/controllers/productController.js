@@ -6,7 +6,7 @@ const Product = require("../models/Product");
  */
 const getProducts = (req, res) => {
     Product.find()
-      .populate("provider", "firstName lastName") // عرض اسم المُوفر
+      .populate("provider", "firstName lastName")
       .then(products =>
         res.json({
           success: true,

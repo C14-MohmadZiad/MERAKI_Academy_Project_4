@@ -11,6 +11,7 @@ const products = require('./routes/productRoutes')
 const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes")
 const wishlistRoutes = require("./routes/wishlistRoutes")
+const userRoutes = require("./routes/userRoutes");
 
 app.use(cors());
 app.use(express.json());
