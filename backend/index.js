@@ -20,6 +20,7 @@ app.use('/api/products',products)
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders",orderRoutes)
 app.use("/api/wishlist",wishlistRoutes)
+app.use("/users", userRoutes);
 
 // Handles any other endpoints [unassigned - endpoints]
 app.use("*", (req, res) => res.status(404).json("NO content at this path"));

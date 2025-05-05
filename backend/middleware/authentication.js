@@ -1,10 +1,6 @@
-
-const jwt  = require("jsonwebtoken");
-  const User = require("../models/user");
+const jwt = require("jsonwebtoken");
+const User = require("../models/user");
 const authentication = (req, res, next) => {
-  console.log("→ ENV JWT_SECRET:", process.env.JWT_SECRET);
-  console.log("→ AUTH HEADER:", req.headers.authorization);
-
   try {
     // 1) check the heders
     if (!req.headers.authorization) {
@@ -29,7 +25,7 @@ const authentication = (req, res, next) => {
       // 4) bring data
       User.findById(decoded.id)
         .select("-password")
-        .populate('role','name permissions')
+        .populate("role", "name permissions")
         .then((user) => {
           if (!user) {
             return res.status(404).json({

@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 
 const Cart =require("../models/cart")
 
@@ -33,7 +34,7 @@ const addItem = (req, res) => {
     { user: req.user._id },
     {
       $push: {
-        items: {product: mongoose.Types.ObjectId(product),
+        items: {product: new mongoose.Types.ObjectId(product),
             quantity: Number(quantity), },
       },
     },
