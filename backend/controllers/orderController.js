@@ -93,10 +93,45 @@ const getAllOrders = (req, res) => {
 };
 
 //UpdateOrderSTatus By admin only
+const updateOrderStatus = (req, res) => {
+  const { status } = req.body;
 
+  Order.findByIdAndUpdate(req.params.id, { status }, { new: true })
+    .then((order) => {
+      if (!order) {
+        return res.status(404).json({
+          success: false,
+          message: "Order not found",
+        });
+      }
+      res.json({ success: true, message: "Status updated", data: order });
+    })
+    .catch((err) => {
+      res
+        .status(400)
+        .json({ success: false, message: "Update failed", error: err.message });
+    });
+};
+
+// delete the request By admin or provider only
+
+const deleteOrder = (req, res) => {
+    Order.findByIdAndDelete(req.params.id)
+      .then(order => {
+        if (!order) {
+          return res.status(404).json({ success: false, message: "Order not found" });
+        }
+        res.json({ success: true, message: "Order deleted" });
+      })
+      .catch(err => 
+        res.status(500).json({ success: false, message: "Server Error", error: err.message })
+      );
+  };
 module.exports = {
   createOrder,
   getUserOrders,
   getOrderById,
   getAllOrders,
+  updateOrderStatus,
+  deleteOrder
 };

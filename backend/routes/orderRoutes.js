@@ -4,6 +4,8 @@ const {
   getUserOrders,
   getOrderById,
   getAllOrders,
+  updateOrderStatus,
+  deleteOrder,
 } = require("../controllers/orderController");
 const authentication = require("../middleware/authentication");
 const authorization = require("../middleware/authorization ");
@@ -23,7 +25,17 @@ router.get(
 
 //patch admin
 router.get("/all", authentication, authorization("admin"), getAllOrders);
-
+router.put(
+  "/:id/status",
+  authentication,
+  authorization("admin", updateOrderStatus)
+);
 //path provider
+router.delete(
+  "/:id",
+  authentication,
+  authorization("admin", "provider"),
+  deleteOrder
+);
 
 module.exports = router;
