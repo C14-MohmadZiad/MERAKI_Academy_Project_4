@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="home-grid">
       {items.map((prod) => (
-        <ProductCard key={prod.id} product={prod} />
+        <ProductCard key={prod._id} product={prod} />
       ))}
     </div>
   );

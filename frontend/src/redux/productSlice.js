@@ -6,7 +6,7 @@ export const productSlice = createSlice({
     // meanu Of Products
     setProducts: (state, action) => {
       console.log("payload setProducts", action.payload);
-      state.items = action.payload;
+      state.items = action.payload.data;
     },
     // add Product
     addProduct: (state, action) => {
