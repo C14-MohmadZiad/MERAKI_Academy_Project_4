@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import api from "../../services/api";
 import { setProducts } from "../../redux/productSlice";
+import ProductCard from "../../components/ProductCard";
+
 import "./style.css";
 
 const Home = () => {
