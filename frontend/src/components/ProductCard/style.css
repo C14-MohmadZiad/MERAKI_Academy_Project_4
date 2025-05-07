@@ -1,0 +1,10 @@
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .pc-image { width: 100%; height: auto; }
+  .pc-name { font-size: 1.1rem; margin: .5rem 0; }
+  .pc-price { color: #28a745; font-weight: bold; }
+  

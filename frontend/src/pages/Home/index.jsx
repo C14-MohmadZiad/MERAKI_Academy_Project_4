@@ -4,21 +4,30 @@ import api from "../../services/api";
 import { setProducts } from "../../redux/productSlice";
 import "./style.css";
 
-const dispatch = useDispatch();
-const items =useSelector((state)=> {
-    state.products.items
-})
+const Home = () => {
+  const dispatch = useDispatch();
 
-useEffect(()=>{
-api.get("/products")
-.then((res)=>{
-    dispatch(setProducts(res.data))
-})
-.catch((err)=>{
-    console.error(err);
-    
-});
+  const items = useSelector((state) => state.products.items);
 
-},[dispatch])
+  useEffect(() => {
+    api
+      .get("/products")
+      .then((res) => {
 
-return 
+        dispatch(setProducts(res.data));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [dispatch]);
+
+  return (
+    <div className="home-grid">
+      {items.map((prod) => (
+        <ProductCard key={prod.id} product={prod} />
+      ))}
+    </div>
+  );
+};
+
+export default Home;
