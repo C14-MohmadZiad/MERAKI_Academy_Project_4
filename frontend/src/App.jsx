@@ -1,20 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import ProductCard from "./components/ProductCard";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
-// import Login from "./pages/Login";
-// import Register from "./pages/Register";
-// import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import NotFound from "./pages/NotFound";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-import Home from "./pages/Home";
 
 import "./App.css";
 
 const App = () => {
   return (
-
     <>
       <Navbar />
       <main>
@@ -22,10 +22,30 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
-          {/* <Route path="/checkout" element={<Checkout />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
-          {/* <Route path="/register" element={<Register />} /> */}
-          {/* <Route path="*" element={<NotFound />} /> */}
+          {/* ِAuth routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Protecte routes */}
+          <Route
+            path="cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            }
+          /> */}
+          {/* unmatched routes */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </>
