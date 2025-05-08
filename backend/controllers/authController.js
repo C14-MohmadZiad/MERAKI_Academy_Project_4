@@ -52,7 +52,7 @@ const register = (req, res) => {
     .then((newUser) => {
       //4 - genrate token
       const token = generateToken(newUser._id);
-      res.status(201).json({
+         return res.status(201).json({
         success: true,
         message: "Account created successfully",
         token,
@@ -65,7 +65,7 @@ const register = (req, res) => {
           message: "Email or username already exists",
         });
       }
-      res.status(500).json({
+      return res.status(500).json({
         success: false,
         message: "Server Error",
         error: err.message,
@@ -98,7 +98,7 @@ const login = (req, res) => {
         }
         // 3) genrate token
         const token = generateToken(user._id);
-        res.json({
+       return res.json({
           success: true,
           message: "Logged in successfully",
           token,
@@ -115,7 +115,7 @@ const login = (req, res) => {
     })
     // 4) any erorr Un Excpected
     .catch((err) => {
-      res
+     return res
         .status(500)
         .json({ success: false, message: "Server Error", error: err.message });
     });

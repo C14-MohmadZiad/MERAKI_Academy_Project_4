@@ -6,8 +6,11 @@ import "./style.css";
 
 const Register = () => {
   const { loginUser } = useContext(AuthContext);
+  const [role, setRole] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [pass, setPass] = useState("");
   const [confirm, setConf] = useState("");
   const [country, setCountry] = useState("");
@@ -32,10 +35,13 @@ const Register = () => {
     try {
       const res = await api.post("/auth/register", {
         username,
+        firstName,
+        lastName,
         email,
         password: pass,
         country,
         age: Number(age),
+        role
       });
       //if register success save token and change status
       loginUser(res.data.token);
@@ -53,6 +59,24 @@ const Register = () => {
       {error && <p>{error}</p>}
 
       <form onSubmit={handleSubmit}>
+        <label>
+          FirstName
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Last Name
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
+        </label>
         <label>
           UserName
           <input
@@ -110,7 +134,20 @@ const Register = () => {
             placeholder="25"
             required
           />
+          <label>
+            Role
+            <select
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              required
+            >
+              <option value="">-- Select Role --</option>
+              <option value="user">User</option>
+              <option value="provider">Provider</option>
+            </select>
+          </label>
         </label>
+
         <button type="submit" disabled={loading}>
           {loading ? "Registering" : "register"}
         </button>
