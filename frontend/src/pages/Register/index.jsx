@@ -41,7 +41,7 @@ const Register = () => {
         password: pass,
         country,
         age: Number(age),
-        role
+        role,
       });
       //if register success save token and change status
       loginUser(res.data.token);

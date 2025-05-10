@@ -120,5 +120,33 @@ const login = (req, res) => {
         .json({ success: false, message: "Server Error", error: err.message });
     });
 };
+const getMe = (req, res) => {
+  userModel
+    .findById(req.user.id)
+    .populate("role", "name permissions -_id")
+    .select("-password")
+    .then((user) => {
+      if (!user) {
+        return res.status(404).json({
+          success: false,
+          message: "User not found",
+        });
+      }
+      return res.status(200).json({
+        success: true,
+        user: {
+          id: user._id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          age: user.age,
+          role: user.role.name,
+          permissions: user.role.permissions,
+        },
+      });
+    })
+    .catch((err) =>
+      res.status(500).json({ success: false, message: "Server Error", error: err.message })
+    );
+};
 
-module.exports = { register, login };
+module.exports = { register, login,getMe };

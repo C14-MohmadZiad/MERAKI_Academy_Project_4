@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AddProduct from "./pages/AddProduct"
 
 
 import "./App.css";
@@ -25,7 +26,8 @@ const App = () => {
           {/* ِAuth routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          {/* Provider  add product*/}
+           <Route path="/add-product" element={<AddProduct/>}/>
           {/* Protecte routes */}
           <Route
             path="cart"

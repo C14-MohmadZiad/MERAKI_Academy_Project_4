@@ -12,7 +12,7 @@ const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes")
 const wishlistRoutes = require("./routes/wishlistRoutes")
 const userRoutes = require("./routes/userRoutes");
-
+const getME = require("./routes/authRoutes")
 app.use(cors());
 app.use(express.json());
 app.use('/api/auth',authrouter)
@@ -21,6 +21,9 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/orders",orderRoutes)
 app.use("/api/wishlist",wishlistRoutes)
 app.use("/users", userRoutes);
+app.use("/auth",getME)
+// app.use("/auth", require("./routes/auth")); 
+
 
 // Handles any other endpoints [unassigned - endpoints]
 app.use("*", (req, res) => res.status(404).json("NO content at this path"));
