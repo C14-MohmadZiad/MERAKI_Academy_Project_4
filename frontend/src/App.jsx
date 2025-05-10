@@ -9,8 +9,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
-import AddProduct from "./pages/AddProduct"
-
+import Checkout from "./pages/Checkout";
+import AddProduct from "./pages/AddProduct";
 
 import "./App.css";
 
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           {/* Provider  add product*/}
-           <Route path="/add-product" element={<AddProduct/>}/>
+          <Route path="/add-product" element={<AddProduct />} />
           {/* Protecte routes */}
           <Route
             path="cart"
@@ -37,15 +37,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-
-          {/* <Route
+          <Route
             path="/checkout"
             element={
               <ProtectedRoute>
                 <Checkout />
               </ProtectedRoute>
             }
-          /> */}
+          />
+
           {/* unmatched routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -12,16 +12,24 @@ const ProductDetail = () => {
 
   useEffect(() => {
     api
-      .get(`products/${id}`)
+      .get(`/products/${id}`)
       .then((res) => {
-        setProduct(res.data);
+        setProduct(res.data.data);
       })
       .catch((err) => {
         console.error("Error fetching product ", err);
       });
   }, [id]);
   const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    const fixedProduct = {
+      ...product,
+      price: Number(product.price) || 0,
+    };
+  
+    dispatch(addToCart(fixedProduct));
+    console.log("Add successfuly", fixedProduct);
+    console.log("🛒 Products", JSON.stringify(fixedProduct, null, 2));
+  
     alert("Product added to cart!");
   };
   if (!product) {
