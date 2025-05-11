@@ -6,11 +6,11 @@ import "./style.css";
 
 const Register = () => {
   const { loginUser } = useContext(AuthContext);
-  const [role, setRole] = useState("");
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("user");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [confirm, setConf] = useState("");
   const [country, setCountry] = useState("");
@@ -21,6 +21,8 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+
     if (pass !== confirm) {
       setError("Confirm password does not match");
       return;
@@ -29,38 +31,43 @@ const Register = () => {
       setError("Please enter Age And Country");
       return;
     }
-    setLoading(true);
-    setError("");
 
+    setLoading(true);
     try {
       const res = await api.post("/auth/register", {
-        username,
         firstName,
         lastName,
+        username,
         email,
         password: pass,
         country,
         age: Number(age),
-        role,
+        role: "user",
       });
-      //if register success save token and change status
+
+      console.log("Register response:", res.data);
       loginUser(res.data.token);
-      //redirect
-      navigate("/");
+
+      if (role === "provider") {
+        navigate("/request-provider");
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       setError(err.response?.data?.message || err.message);
     } finally {
       setLoading(false);
     }
   };
+
   return (
-    <div>
+    <div className="register-page">
       <h2>Create Account</h2>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <label>
-          FirstName
+          First Name
           <input
             type="text"
             value={firstName}
@@ -78,7 +85,7 @@ const Register = () => {
           />
         </label>
         <label>
-          UserName
+          User Name
           <input
             type="text"
             value={username}
@@ -96,7 +103,7 @@ const Register = () => {
           />
         </label>
         <label>
-          password
+          Password
           <input
             type="password"
             value={pass}
@@ -105,7 +112,7 @@ const Register = () => {
           />
         </label>
         <label>
-          confirmPassword
+          Confirm Password
           <input
             type="password"
             value={confirm}
@@ -123,7 +130,6 @@ const Register = () => {
             required
           />
         </label>
-
         <label>
           Age
           <input
@@ -134,22 +140,16 @@ const Register = () => {
             placeholder="25"
             required
           />
-          <label>
-            Role
-            <select
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              required
-            >
-              <option value="">-- Select Role --</option>
-              <option value="user">User</option>
-              <option value="provider">Provider</option>
-            </select>
-          </label>
         </label>
-
+        <label>
+          Role
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="user">User</option>
+            <option value="provider">Provider</option>
+          </select>
+        </label>
         <button type="submit" disabled={loading}>
-          {loading ? "Registering" : "register"}
+          {loading ? "Registering…" : "Register"}
         </button>
       </form>
     </div>
