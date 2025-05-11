@@ -1,11 +1,14 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../redux/authSlice";
+// import { AuthContext } from "../../context/AuthContext";
 import api from "../../services/api";
 import "./style.css";
 
 const Register = () => {
-  const { loginUser } = useContext(AuthContext);
+
+  // const { loginUser } = useContext(AuthContext);
   const [role, setRole] = useState("user");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,6 +21,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +50,8 @@ const Register = () => {
       });
 
       console.log("Register response:", res.data);
-      loginUser(res.data.token);
+      // loginUser(res.data.token);
+      dispatch(loginSuccess(res.data.user));
 
       if (role === "provider") {
         navigate("/request-provider");
