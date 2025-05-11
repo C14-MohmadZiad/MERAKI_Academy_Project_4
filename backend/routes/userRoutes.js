@@ -17,5 +17,7 @@ router.delete("/:id", authentication, authorization("admin"), deleteUser);
 router.put("/:id/role", authentication, authorization("admin"), updateUserRole);
 // request for provider
 
+router.post("/request-provider/public", createRequest);
 router.post("/request-provider", authentication, createRequest);
+
 module.exports = router;

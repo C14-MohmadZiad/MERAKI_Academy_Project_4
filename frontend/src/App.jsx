@@ -57,6 +57,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/request-provider"
+            element={
+              <ProtectedRoute allowedRoles={["user"]}>
+                <RequestProvider />
+              </ProtectedRoute>
+            }
+          />
 
           {/* — Catch-all — */}
           <Route path="*" element={<NotFound />} />

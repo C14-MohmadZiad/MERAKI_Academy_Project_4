@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function RequestProvider() {
-  const { state } = useLocation();
-  const userId = state?.userId || null;
-  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate(); 
 
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleRequest = async () => {
-    if (!userId) {
-      alert("User ID not received. Please register again");
+    if (!user?.id) {
+      alert("User ID not received. Please login again.");
       return;
     }
+
     if (!storeName.trim() || !storeDescription.trim()) {
       alert("Please fill in all fields.");
       return;
@@ -24,15 +25,15 @@ export default function RequestProvider() {
     setLoading(true);
     try {
       await api.post("/users/request-provider", {
-        userId,
+        userId: user.id,
         storeName,
         storeDescription,
       });
 
-      alert("Your upgrade request has been processed.");
-      navigate("/login");
+      alert("Your request has been submitted for review.");
+      navigate("/login"); 
     } catch (err) {
-      console.error(err);
+      console.error("Request failed:", err);
       alert("Failed to send upgrade request.");
     } finally {
       setLoading(false);

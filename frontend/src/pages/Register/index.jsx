@@ -1,13 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { loginSuccess } from "../../redux/authSlice";
-// import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import api from "../../services/api";
 import "./style.css";
 
 const Register = () => {
-  // const { loginUser } = useContext(AuthContext);
+  const { loginUser } = useContext(AuthContext); 
   const [role, setRole] = useState("user");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,7 +18,6 @@ const Register = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,13 +42,15 @@ const Register = () => {
         password: pass,
         country,
         age: Number(age),
-        role: "user",
+        role: "user", 
       });
 
       console.log("Register response:", res.data);
-      // loginUser(res.data.token);
-      dispatch(loginSuccess(res.data.user));
 
+    
+      loginUser(res.data.token);
+
+  
       if (role === "provider") {
         navigate("/request-provider");
       } else {
@@ -130,8 +129,8 @@ const Register = () => {
             type="text"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
-            placeholder="Jordan"
             required
+            placeholder="Jordan"
           />
         </label>
         <label>
@@ -141,8 +140,8 @@ const Register = () => {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             min="1"
-            placeholder="25"
             required
+            placeholder="25"
           />
         </label>
         <label>

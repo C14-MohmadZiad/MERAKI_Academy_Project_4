@@ -20,7 +20,7 @@ app.use("/api/products", products);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/wishlist", wishlistRoutes);
-app.use("/users", userRoutes);
+app.use("/api/users", userRoutes);
 app.use("/auth", getME);
 
 // Handles any other endpoints [unassigned - endpoints]

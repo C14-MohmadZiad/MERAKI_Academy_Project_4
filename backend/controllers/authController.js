@@ -55,7 +55,11 @@ const register = (req, res) => {
          return res.status(201).json({
         success: true,
         message: "Account created successfully",
-        token,
+        token , user:{
+          id: newUser._id,
+          email : newUser.email,
+          username: newUser.username
+        }
       });
     })
     .catch((err) => {
