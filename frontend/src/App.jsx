@@ -12,6 +12,7 @@ import Register from "./pages/Register";
 import RequestProvider from "./pages/RequestProvider";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProviderRequests from "./pages/Admin/ProviderRequest";
 
 import "./App.css";
 
@@ -66,6 +67,15 @@ const App = () => {
             }
           />
 
+          {/* admin only */}
+          <Route
+            path="/admin/requests"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <ProviderRequests />
+              </ProtectedRoute>
+            }
+          />
           {/* — Catch-all — */}
           <Route path="*" element={<NotFound />} />
         </Routes>

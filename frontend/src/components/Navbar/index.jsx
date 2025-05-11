@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-
 import "./style.css";
+
 const Navbar = () => {
   const { isLoggedIn, logoutUser, user } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,8 +30,16 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/cart">Cart</Link>
 
-        {user?.role === "provider" && (
+        {user?.role=== "provider" && (
           <Link to="/add-product">Add Product</Link>
+        )}
+
+        {user?.role === "user" && (
+          <Link to="/request-provider">Become a Provider</Link>
+        )}
+
+        {user?.role === "admin" && (
+          <Link to="/admin/requests">Provider Requests</Link>
         )}
 
         {isLoggedIn ? (
