@@ -28,7 +28,8 @@ router.get("/all", authentication, authorization("admin"), getAllOrders);
 router.put(
   "/:id/status",
   authentication,
-  authorization("admin"), updateOrderStatus
+  authorization("admin"),
+  updateOrderStatus
 );
 //path provider
 router.delete(

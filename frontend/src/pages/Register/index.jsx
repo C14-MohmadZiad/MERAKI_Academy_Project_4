@@ -7,7 +7,6 @@ import api from "../../services/api";
 import "./style.css";
 
 const Register = () => {
-
   // const { loginUser } = useContext(AuthContext);
   const [role, setRole] = useState("user");
   const [firstName, setFirstName] = useState("");
