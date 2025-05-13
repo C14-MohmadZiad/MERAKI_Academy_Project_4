@@ -9,7 +9,7 @@ const featuredItems = [
     image:
       "https://media.istockphoto.com/id/2149923567/photo/family-sitting-on-sofa-looking-at-mobile-phone.jpg?s=612x612&w=0&k=20&c=l3fXarxSCw4IAnIkmWqOQZg73UHqLSIqsid2RYKOp8w=",
     cta: "Shop Now",
-    link: "/products?category=smart-devices",
+    link: "/shop",
     scroll: false,
   },
   {

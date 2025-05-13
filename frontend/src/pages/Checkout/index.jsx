@@ -29,9 +29,8 @@ const Checkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Order placed successfully!");
     dispatch(clearCart());
-    navigate("/");
+    navigate("/thankyou");
   };
 
   return (

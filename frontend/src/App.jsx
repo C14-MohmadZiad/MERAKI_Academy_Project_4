@@ -13,7 +13,8 @@ import RequestProvider from "./pages/RequestProvider";
 import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProviderRequests from "./pages/Admin/ProviderRequest";
-
+import ThankYou from "./pages/Thank/ThankYou.jsx";
+import Shop from "./pages/Shop/index.jsx";
 import "./App.css";
 
 const App = () => {
@@ -25,6 +26,8 @@ const App = () => {
           {/* — Public routes — */}
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/thankyou" element={<ThankYou />} />
+
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
@@ -32,6 +35,8 @@ const App = () => {
           <Route path="/request-provider" element={<RequestProvider />} />
 
           {/* — Authenticated routes — */}
+
+          <Route path="/shop" element={<Shop />} />
           <Route
             path="/cart"
             element={
