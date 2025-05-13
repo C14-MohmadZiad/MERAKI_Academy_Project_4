@@ -5,7 +5,7 @@ import api from "../../services/api";
 import "./style.css";
 
 const Register = () => {
-  const { loginUser } = useContext(AuthContext); 
+  const { loginUser } = useContext(AuthContext);
   const [role, setRole] = useState("user");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -42,15 +42,13 @@ const Register = () => {
         password: pass,
         country,
         age: Number(age),
-        role: "user", 
+        role: "user",
       });
 
       console.log("Register response:", res.data);
 
-    
       loginUser(res.data.token);
 
-  
       if (role === "provider") {
         navigate("/request-provider");
       } else {
@@ -68,7 +66,7 @@ const Register = () => {
       <h2>Create Account</h2>
       {error && <p className="error">{error}</p>}
 
-      <form onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <label>
           First Name
           <input
