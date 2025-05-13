@@ -13,6 +13,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
   }
 
   if (
+    !user ||
     Array.isArray(allowedRoles) &&
     allowedRoles.length > 0 &&
     !allowedRoles.includes(user.role)
