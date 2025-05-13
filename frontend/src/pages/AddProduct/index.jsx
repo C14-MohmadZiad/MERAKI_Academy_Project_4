@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { addProduct } from "../../redux/productSlice";
 import api from "../../services/api";
-
+import "./style.css"
 const AddProductPage = () => {
   const { user } = useContext(AuthContext);
   const dispatch = useDispatch();
@@ -44,19 +44,28 @@ const AddProductPage = () => {
   return (
     <div className="add-product-page">
       <h2>Add New Product</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="add-product-form" onSubmit={handleSubmit}>
+
+        <label>
+          Name
         <input
           name="name"
           placeholder="Name"
           onChange={handleChange}
           required
         />
+        </label>
+        <label>
+          Description
         <input
           name="description"
           placeholder="Description"
           onChange={handleChange}
           required
         />
+        </label>
+        <label>
+          Price
         <input
           name="price"
           type="number"
@@ -64,13 +73,20 @@ const AddProductPage = () => {
           onChange={handleChange}
           required
         />
+        <label>
+        </label>
+        Image URL
         <input name="image" placeholder="Image URL" onChange={handleChange} />
+        </label>
+        <label>
+          Category
         <input
           name="category"
           placeholder="Category"
           onChange={handleChange}
           required
         />
+       </label>
         <button type="submit">Add Product</button>
       </form>
     </div>
