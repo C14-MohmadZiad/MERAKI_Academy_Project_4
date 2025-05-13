@@ -5,7 +5,7 @@ import { setProducts } from "../../redux/productSlice";
 import ProductCard from "../../components/ProductCard";
 import { useSearchParams } from "react-router-dom";
 import FeaturedSlider from "../../components/Featured/FeaturedSlider";
-
+import TrendingBox from "../../components/Featured/TrendingBox";
 import "./style.css";
 
 const Home = () => {
@@ -34,10 +34,19 @@ const Home = () => {
   );
 
   return (
-    <div className="home-container">
-      <FeaturedSlider />
+    <div className="home-page">
+      <div className="highlight-fullwidth">
+        <div className="highlight-inner">
+          <div className="slider-side">
+            <FeaturedSlider />
+          </div>
+          <div className="trending-side">
+            <TrendingBox />
+          </div>
+        </div>
+      </div>
 
-      <div id="products-section">
+      <div id="products-section" className="home-container">
         {categories.map((cat) => {
           const prodsInCat = filteredItems.filter(
             (p) => (p.category || "Uncategorized") === cat

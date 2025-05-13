@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useDispatch } from "react-redux";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { addProduct , setProducts} from "../../redux/productSlice";
+import { setProducts } from "../../redux/productSlice";
 import api from "../../services/api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,10 +35,10 @@ const AddProductPage = () => {
     e.preventDefault();
     api
       .post("/products", formData)
-      .then((response) => {
+      .then(() => {
         api.get("/products").then((res) => {
           dispatch(setProducts(res.data));
-  
+
           toast.success("Product added successfully!");
           setTimeout(() => {
             navigate("/");
@@ -95,7 +95,7 @@ const AddProductPage = () => {
         </label>
         <button type="submit">Add Product</button>
       </form>
-      <ToastContainer position="top-center"/>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

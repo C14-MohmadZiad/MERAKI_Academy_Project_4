@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../services/api";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import { Modal, Button } from "react-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
@@ -15,16 +15,22 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+  const selectedFromRedux = useSelector((state) => state.products.selectedProduct);
+
   useEffect(() => {
     api
       .get(`/products/${id}`)
       .then((res) => {
-        setProduct(res.data.data);
+        setProduct(res.data?.data || res.data);
       })
       .catch((err) => {
         console.error("Error fetching product ", err);
+        // Use fallback from Redux if available
+        if (selectedFromRedux?.id?.toString() === id) {
+          setProduct(selectedFromRedux);
+        }
       });
-  }, [id]);
+  }, [id, selectedFromRedux]);
 
   const handleAddToCart = () => {
     const fixedProduct = {
