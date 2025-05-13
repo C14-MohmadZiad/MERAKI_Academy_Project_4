@@ -21,6 +21,13 @@ const Navbar = () => {
   };
 
   return (
+    <>
+
+          {/* ——— Top Banner ——— */}
+          <div className="navbar__top-banner">
+        <span className="navbar__top-icon">🚚</span>
+        <span className="navbar__top-text">Free Delivery on All Orders</span>
+      </div>
     <nav className="navbar">
       <div className="navbar__left">
         <Link to="/" className="navbar__logo">
@@ -86,6 +93,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+    </>
   );
 };
 
