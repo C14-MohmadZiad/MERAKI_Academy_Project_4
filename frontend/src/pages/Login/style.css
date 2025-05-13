@@ -79,3 +79,15 @@
 .login-link:hover {
   color: #e86e00;
 }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
