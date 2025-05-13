@@ -37,10 +37,10 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div className="login-page">
       <h2>Login</h2>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
+      {error && <p className="error">{error}</p>}
+      <form className="login-form" onSubmit={handleSubmit}>
         <label>
           Email
           <input
@@ -65,6 +65,12 @@ const Login = () => {
           </button>
         </label>
       </form>
+      <p className="login-footer">
+        Not registered yet?{" "}
+        <span className="login-link" onClick={() => navigate("/register")}>
+          Create Account
+        </span>
+      </p>
     </div>
   );
 };

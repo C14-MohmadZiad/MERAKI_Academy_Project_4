@@ -1,0 +1,81 @@
+.login-page {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.login-page h2 {
+  text-align: center;
+  color: #ff7900;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  padding-top: 10px;
+}
+
+/* ✅ أضف هذا لتحديد الـ form نفسه */
+.login-page form {
+  padding-inline: 6px; /* يعطي space يمنع الالتصاق */
+}
+
+/* مدخلات */
+.login-page input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* زر */
+.login-page button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff7900;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-page button:hover {
+  background-color: #e86e00;
+}
+
+.error {
+  color: #e74c3c;
+  background: #ffe9e9;
+  padding: 10px 14px;
+  margin: 0 0 20px 0;
+  border-left: 4px solid #e74c3c;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.login-link {
+  color: #ff7900;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  text-decoration: underline;
+}
+
+.login-link:hover {
+  color: #e86e00;
+}
