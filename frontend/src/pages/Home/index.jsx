@@ -22,7 +22,7 @@ const Home = () => {
       .get("/products")
       .then((res) => {
         dispatch(setProducts(res.data));
-       
+
         setTimeout(() => {
           setLoading(false);
         }, 800);

@@ -20,9 +20,9 @@ import "./App.css";
 
 const App = () => {
   return (
-    <>
+    <div className="app-wrapper">
       <Navbar />
-      <main>
+      <main className="main-content">
         <Routes>
           {/* — Public routes — */}
           <Route path="/" element={<Home />} />
@@ -36,7 +36,6 @@ const App = () => {
           <Route path="/request-provider" element={<RequestProvider />} />
 
           {/* — Authenticated routes — */}
-
           <Route path="/shop" element={<Shop />} />
           <Route
             path="/cart"
@@ -87,11 +86,8 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <>
-            {/*Footer*/}
-            <Footer />
-          </>
-    </>
+      <Footer />
+    </div>
   );
 };
 

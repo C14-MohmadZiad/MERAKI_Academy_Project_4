@@ -33,24 +33,32 @@ const TrendingBox = () => {
   };
 
   return (
-    <div className="trending-box">
-      {trendingProducts.map((item) => (
-        <Link
-          to={`/product/${item.id}`}
-          key={item.id}
-          className="trending-card"
-          onClick={() => handleClick(item)} 
-        >
-          <div className="trending-img">
-            <img src={item.image} alt={item.name} />
-          </div>
-          <div className="trending-info">
-            <span className="trending-badge">{item.label}</span>
-            <p className="trending-name">{item.name}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
+<div className="trending-box">
+  {trendingProducts.map((item) => (
+    <Link
+      to={`/product/${item.id}`}
+      key={item.id}
+      className="trending-card"
+      onClick={() => handleClick(item)}
+    >
+      <div className="trending-img">
+        <img src={item.image} alt={item.name} />
+      </div>
+      <div className="trending-info">
+        <span className="trending-badge">{item.label}</span>
+        <p className="trending-name">{item.name}</p>
+        <p className="trending-desc">{item.description}</p>
+        <div className="trending-bottom">
+          <span className="trending-price">${item.price}</span>
+          <span className="trending-arrow">→</span>
+        </div>
+      </div>
+    </Link>
+  ))}
+</div>
+
+  
+  
   );
 };
 
