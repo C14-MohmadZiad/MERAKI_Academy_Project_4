@@ -15,6 +15,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ProviderRequests from "./pages/Admin/ProviderRequest";
 import ThankYou from "./pages/Thank/ThankYou.jsx";
 import Shop from "./pages/Shop/index.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
 
 const App = () => {
@@ -81,10 +82,15 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+
           {/* — Catch-all — */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <>
+            {/*Footer*/}
+            <Footer />
+          </>
     </>
   );
 };

@@ -2,10 +2,13 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 import { AuthContext } from "../../context/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./style.css";
 
 export default function RequestProvider() {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const [storeName, setStoreName] = useState("");
   const [storeDescription, setStoreDescription] = useState("");
@@ -13,12 +16,12 @@ export default function RequestProvider() {
 
   const handleRequest = async () => {
     if (!user?.id) {
-      alert("User ID not received. Please login again.");
+      toast.error("User ID not received. Please login again.");
       return;
     }
 
     if (!storeName.trim() || !storeDescription.trim()) {
-      alert("Please fill in all fields.");
+      toast.warn("Please fill in all fields.");
       return;
     }
 
@@ -30,18 +33,20 @@ export default function RequestProvider() {
         storeDescription,
       });
 
-      alert("Your request has been submitted for review.");
-      navigate("/login"); 
+      toast.success("Your request has been submitted for review.");
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (err) {
       console.error("Request failed:", err);
-      alert("Failed to send upgrade request.");
+      toast.error("Failed to send upgrade request.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "2rem auto" }}>
+    <div className="request-provider-container">
       <h2>Request Provider Access</h2>
 
       <label>
@@ -66,6 +71,9 @@ export default function RequestProvider() {
       <button onClick={handleRequest} disabled={loading}>
         {loading ? "Sending..." : "Submit Request"}
       </button>
+
+      {/* Toast container for notifications */}
+      <ToastContainer position="top-center" autoClose={2500} />
     </div>
   );
 }
