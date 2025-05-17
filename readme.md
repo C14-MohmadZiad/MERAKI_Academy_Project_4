@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
- <img width="400px" height="100px" src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGUlMjBjb21tZXJjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Project logo">
+ <img width="400px" height="100px" src="https://files.oaiusercontent.com/file-BfVXPQAai3qUDLbZqPr3wT?se=2025-05-17T11%3A45%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4dff5efc-c8f5-4dbe-9a2e-7de0215c9102.png&sig=72SlgUtDrzxosw/CYlQe9ZZJZyfWSzHRSD5z5kNnl%2Bo%3D" alt="Project logo">
  </a>
 </p>
 
