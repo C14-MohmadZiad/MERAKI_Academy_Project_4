@@ -1,10 +1,10 @@
 <p align="center">
 <a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
- <img width="400px" height="100px" src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="Project logo">
+ <img width="400px" height="100px" src="https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGUlMjBjb21tZXJjZXxlbnwwfHwwfHx8MA%3D%3D" alt="Project logo">
  </a>
 </p>
 
-<h3 align="center">Project Title
+<h3 align="center">MZ-Store
 </h3>
 
 ---
@@ -27,13 +27,15 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+WMZ-Store is an e-commerce web application designed to offer seamless online shopping experiences. The platform allows users to explore and purchase smart devices, fiber internet services, and mobile devices easily and securely. Users can register with different roles—customer, provider, and admin—each with specific permissions and functionalities tailored to enhance the shopping and management experience.
+
+The website is professionally designed with an intuitive and responsive user interface, ensuring an exceptional user experience. MZ-Store integrates robust backend services, reliable APIs, and secure database management to provide a smooth, efficient, and secure shopping environment.
 
 Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
 
 ### Prerequisites
 
@@ -76,9 +78,10 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 Ex.
 
-- You don't have to register to navigate our web app
-- You can click on the **Home** tab provided in the navigation bar to view the home section
-- You can click on the **Add to cart** button to add this product to your cart but you have to be one of our users, so you should create an account
+- Navigate through the site freely without signing in.
+- Create an account to access cart and checkout functionalities.
+- Use the Add to Cart button**Add to cart** to select products and proceed to checkout.
+- Admin and providers have dedicated dashboards to manage products, orders, and users.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -90,7 +93,7 @@ Ex.
 ## User Story <a name = "#user_story"></a>
 
 Your trello board link
-<a href=''>Trello</a>
+<a href='https://trello.com/b/0jNHtD9y/project-4'>Trello</a>
 
 ## Data Flow <a name = "#data_flow"></a>
 
