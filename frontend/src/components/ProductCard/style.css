@@ -3,7 +3,9 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   background-color: #fff;
   max-width: 280px;
   width: 100%;
@@ -25,7 +27,7 @@
 
 .pc-image-wrapper {
   width: 100%;
-  aspect-ratio: 1 / 1; /* هذا السطر يثبت الصورة لتكون مربعة دائماً */
+  aspect-ratio: 1 / 1; 
   overflow: hidden;
   background-color: #fafafa;
   display: flex;
@@ -36,7 +38,7 @@
 .pc-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* تعبئة الإطار بدون تشويه */
+  object-fit: cover; 
   display: block;
 }
 

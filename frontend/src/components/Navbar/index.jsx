@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"; // <-- المهم هنا
 import { AuthContext } from "../../context/AuthContext";
 import {
   FiShoppingCart,
@@ -7,6 +8,8 @@ import {
   FiUser,
   FiLogOut,
   FiUserPlus,
+  FiMoon,
+  FiSun,
 } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
 import "./Style.css";
@@ -15,6 +18,19 @@ const Navbar = () => {
   const { isLoggedIn, logoutUser, user } = useContext(AuthContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [profileOpen, setProfileOpen] = useState(false);
+
+  // ربط عدد السلة من Redux
+  const cartItemsCount = useSelector((state) =>
+    state.cart.items
+      ? state.cart.items.reduce((acc, item) => acc + (item.quantity || 1), 0)
+      : 0
+  );
+
+  // Dark Mode State
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("darkMode") === "true"
+  );
+
   const navigate = useNavigate();
 
   const handleSearchSubmit = (e) => {
@@ -28,6 +44,21 @@ const Navbar = () => {
     logoutUser();
     navigate("/login");
   };
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      localStorage.setItem("darkMode", !prev);
+      return !prev;
+    });
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <>
@@ -56,10 +87,19 @@ const Navbar = () => {
           </form>
           {/* Links */}
           <div className="nav-links">
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleDarkMode}
+              aria-label="Toggle Dark Mode"
+            >
+              {darkMode ? <FiSun size={21} /> : <FiMoon size={21} />}
+            </button>
             <Link to="/">Home</Link>
             <Link to="/cart" className="cart-link">
               <FiShoppingCart size={21} />
-              <span className="cart-badge">2</span> {/* عدّل الرقم لاحقًا */}
+              {cartItemsCount > 0 && (
+                <span className="cart-badge">{cartItemsCount}</span>
+              )}
             </Link>
 
             {/* Dynamic Role Links */}
@@ -92,7 +132,7 @@ const Navbar = () => {
                     <Link to="/profile">
                       <FiUser /> Profile
                     </Link>
-                    <button onClick={handleLogout}>
+                    <button type="button" onMouseDown={handleLogout}>
                       <FiLogOut /> Logout
                     </button>
                   </div>

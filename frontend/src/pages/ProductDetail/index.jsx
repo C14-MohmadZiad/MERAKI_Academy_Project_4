@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import api from "../../services/api";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
@@ -9,28 +9,33 @@ import "./style.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(location.state?.product || null);
   const [showModal, setShowModal] = useState(false);
 
   const selectedFromRedux = useSelector((state) => state.products.selectedProduct);
 
   useEffect(() => {
-    api
-      .get(`/products/${id}`)
-      .then((res) => {
-        setProduct(res.data?.data || res.data);
-      })
-      .catch((err) => {
-        console.error("Error fetching product ", err);
-        // Use fallback from Redux if available
-        if (selectedFromRedux?.id?.toString() === id) {
-          setProduct(selectedFromRedux);
-        }
-      });
-  }, [id, selectedFromRedux]);
+    // إذا لم يتم تمرير المنتج عبر state، حاول جلبه من الباكند
+    if (!location.state?.product) {
+      api
+        .get(`/products/${id}`)
+        .then((res) => {
+          setProduct(res.data?.data || res.data);
+        })
+        .catch((err) => {
+          // استخدم fallback من الريدوكس إذا موجود
+          if (selectedFromRedux?.id?.toString() === id) {
+            setProduct(selectedFromRedux);
+          } else {
+            setProduct(null);
+          }
+        });
+    }
+  }, [id, selectedFromRedux, location.state]);
 
   const handleAddToCart = () => {
     const fixedProduct = {
@@ -60,7 +65,7 @@ const ProductDetail = () => {
 
   const handleCloseModal = () => setShowModal(false);
 
-  if (!product) return <p className="loading">Loading product...</p>;
+  if (!product) return <p className="loading">Product not found.</p>;
 
   const canDelete =
     user &&

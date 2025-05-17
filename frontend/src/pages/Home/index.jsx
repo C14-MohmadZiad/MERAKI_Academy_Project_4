@@ -9,6 +9,9 @@ import TrendingBox from "../../components/Featured/TrendingBox";
 import Spinner from "../../components/Spinner";
 import "./style.css";
 
+const capitalize = (str) =>
+  str.charAt(0).toUpperCase() + str.slice(1);
+
 const Home = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.products.items);
@@ -22,7 +25,6 @@ const Home = () => {
       .get("/products")
       .then((res) => {
         dispatch(setProducts(res.data));
-
         setTimeout(() => {
           setLoading(false);
         }, 800);
@@ -38,14 +40,18 @@ const Home = () => {
   );
 
   const categories = Array.from(
-    new Set(filteredItems.map((item) => item.category || "Uncategorized"))
+    new Set(
+      filteredItems.map((item) =>
+        (item.category || "Uncategorized").trim().toLowerCase()
+      )
+    )
   );
 
   if (loading) return <Spinner />;
 
   return (
     <div className="home-page">
-      <div className="highlight-fullwidth">
+      <div className="highlight-wrapper">
         <div className="highlight-inner">
           <div className="slider-side">
             <FeaturedSlider />
@@ -59,11 +65,12 @@ const Home = () => {
       <div id="products-section" className="home-container">
         {categories.map((cat) => {
           const prodsInCat = filteredItems.filter(
-            (p) => (p.category || "Uncategorized") === cat
+            (p) =>
+              ((p.category || "Uncategorized").trim().toLowerCase() === cat)
           );
           return (
             <section key={cat} className="products-section">
-              <h2 className="section-title">{cat}</h2>
+              <h2 className="section-title">{capitalize(cat)}</h2>
               <div className="product-grid">
                 {prodsInCat.map((prod) => (
                   <ProductCard key={prod._id} product={prod} />

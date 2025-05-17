@@ -4,8 +4,8 @@ import "./FeaturedSlider.css";
 
 const featuredItems = [
   {
-    title: "Smart Devices",
-    subtitle: "Explore the latest smart devices and gadgets at amazing prices.",
+    title: "Shop All Products",
+    subtitle: "Explore our wide range of products across all categories: phones, internet, accessories, and more.",
     image:
       "https://media.istockphoto.com/id/2149923567/photo/family-sitting-on-sofa-looking-at-mobile-phone.jpg?s=612x612&w=0&k=20&c=l3fXarxSCw4IAnIkmWqOQZg73UHqLSIqsid2RYKOp8w=",
     cta: "Shop Now",
@@ -19,8 +19,8 @@ const featuredItems = [
     image:
       "https://media.istockphoto.com/id/2170143478/photo/happy-woman-using-smartphone-and-credit-card-for-online-shopping-on-sofa-at-home.jpg?s=2048x2048&w=is&k=20&c=gq9FrAD_s_WwG64OX6pWmxN2K9eqaeblL3U_zhGNrLM=",
     cta: "Explore Plans ⇲",
-    link: "products-section", 
-    scroll: true, 
+    link: "products-section",
+    scroll: true,
   },
 ];
 
@@ -34,6 +34,12 @@ const FeaturedSlider = () => {
     arrows: true,
     autoplay: true,
     autoplaySpeed: 5000,
+    appendDots: (dots) => (
+      <div>
+        <ul style={{ margin: "0px" }}>{dots}</ul>
+      </div>
+    ),
+    customPaging: (i) => <div className="slick-dot"></div>,
   };
 
   const handleClick = (item) => {
@@ -51,12 +57,14 @@ const FeaturedSlider = () => {
     <div className="slider-wrapper">
       <Slider {...settings}>
         {featuredItems.map((item, index) => (
-          <div key={index} className="slider-slide">
+          <div key={index} className="slider-slide fade-in">
             <div className="slider-content">
               <div className="slider-text">
                 <h2>{item.title}</h2>
                 <p>{item.subtitle}</p>
-                <button onClick={() => handleClick(item)}>{item.cta}</button>
+                <button className="glow-btn" onClick={() => handleClick(item)}>
+                  {item.cta}
+                </button>
               </div>
               <div className="slider-image">
                 <img src={item.image} alt={item.title} />
