@@ -1,104 +1,170 @@
-<p align="center">
-<a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
- <img width="400px" height="100px" src="https://files.oaiusercontent.com/file-BfVXPQAai3qUDLbZqPr3wT?se=2025-05-17T11%3A45%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4dff5efc-c8f5-4dbe-9a2e-7de0215c9102.png&sig=72SlgUtDrzxosw/CYlQe9ZZJZyfWSzHRSD5z5kNnl%2Bo%3D" alt="Project logo">
- </a>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Avocado E-Commerce Project README</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ddd;
+      margin: 30px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+    code, pre {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+    pre {
+      padding: 10px;
+      overflow-x: auto;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
 
-<h3 align="center">MZ-Store
-</h3>
+  <div style="text-align:center;">
+    <a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
+      <img width="400" height="100" src="https://www.meraki-academy.org/assets/img/logov02.svg" alt="MERAKI Academy Logo" />
+    </a>
+  </div>
 
----
+  <h1 align="center">Avocado E-Commerce Project</h1>
 
-<p align="center"> An awesome Project to describe README 
-    <br> 
-<a href=''>Demo</a>
-    <br> 
-</p>
+  <hr />
 
-## 📝 Table of Contents
+  <p align="center">
+    A modern, scalable e-commerce platform built with the latest technologies.<br />
+    <a href="">Demo (Coming Soon)</a>
+  </p>
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [User Story](#user_story)
-- [Data Flow](#data_flow)
-- [Guided By](#guided_by)
+  <h2>📝 Table of Contents</h2>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#getting_started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#built_using">Built Using</a></li>
+    <li><a href="#user_story">User Story</a></li>
+    <li><a href="#data_flow">Data Flow</a></li>
+    <li><a href="#guided_by">Guided By</a></li>
+  </ul>
 
-## 🧐 About <a name = "about"></a>
+  <h2 id="about">🧐 About</h2>
+  <p>
+    <strong>Why Avocado?</strong><br />
+    Avocado is designed to deliver a seamless shopping experience using modern web technologies. Built with Next.js and TypeScript on the frontend, and powered by a robust Node.js and Express backend with PostgreSQL (Neon) as the database, it offers scalability, security, and performance. Features like real-time chat support, detailed analytics, and an intuitive admin panel make Avocado a complete solution for online stores.
+  </p>
+  <p>
+    <strong>Benefits:</strong>
+    <ul>
+      <li><strong>Performance & Scalability:</strong> Leveraging Next.js with server-side rendering and PostgreSQL (Neon) for efficient data management.</li>
+      <li><strong>Type Safety:</strong> Full TypeScript integration across frontend and backend for more reliable code.</li>
+      <li><strong>User Engagement:</strong> Real-time chat and personalized product recommendations.</li>
+      <li><strong>Admin Dashboard:</strong> Manage products, categories, orders, and users with ease.</li>
+    </ul>
+  </p>
 
-WMZ-Store is an e-commerce web application designed to offer seamless online shopping experiences. The platform allows users to explore and purchase smart devices, fiber internet services, and mobile devices easily and securely. Users can register with different roles—customer, provider, and admin—each with specific permissions and functionalities tailored to enhance the shopping and management experience.
+  <hr />
 
-The website is professionally designed with an intuitive and responsive user interface, ensuring an exceptional user experience. MZ-Store integrates robust backend services, reliable APIs, and secure database management to provide a smooth, efficient, and secure shopping environment.
+  <h2 id="getting_started">🏁 Getting Started</h2>
+  <p>Follow these instructions to set up the project locally for development and testing.</p>
 
-Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
+  <h3>Prerequisites</h3>
+  <ul>
+    <li>Visual Studio Code - <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Download here</a></li>
+    <li>Git - <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreferrer">Download here</a></li>
+    <li>PostgreSQL (Neon) - <a href="https://neon.tech/" target="_blank" rel="noopener noreferrer">Setup Neon DB</a></li>
+    <li>Node.js (Latest LTS) - <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener noreferrer">Download here</a></li>
+  </ul>
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+  <h3>Installation Steps</h3>
+  <ol>
+    <li>Clone the repo to your machine:
+      <pre><code>git clone https://github.com/your_username/avocado-project.git</code></pre>
+    </li>
+    <li>Install dependencies in both <code>backend</code> and <code>frontend</code> folders:
+      <pre><code>npm install</code></pre>
+    </li>
+    <li>Set up your PostgreSQL database (Neon) and update environment variables accordingly.</li>
+    <li>Run the backend server:
+      <pre><code>npm run dev</code></pre>
+    </li>
+    <li>Run the frontend Next.js app:
+      <pre><code>npm run dev</code></pre>
+    </li>
+  </ol>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
+  <p>Your application should now be running locally.</p>
 
-### Prerequisites
+  <hr />
 
-- Visual Studio Code follow this <a href=''>link</a> to install.
-- Git Bash follow this <a href=''>link</a> to install.
-- MongoDB follow this <a href=''>link</a> to install.
-- Node.js follow this <a href=''>link</a> to install.
+  <h2 id="usage">🎈 Usage</h2>
+  <ul>
+    <li>Browse products without registering.</li>
+    <li>Register or login to add products to your cart and place orders.</li>
+    <li>Admin users can manage categories, products, users, and view KPIs through the admin panel.</li>
+    <li>Use the real-time chat feature for support.</li>
+  </ul>
 
-### Installing:
+  <hr />
 
-1. Clone the repo to your local machine using git bash.
+  <h2 id="built_using">⛏️ Built Using</h2>
+  <ul>
+    <li><a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">PostgreSQL (Neon)</a> - Cloud Database</li>
+    <li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express.js</a> - Backend Framework</li>
+    <li><a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> - React Framework for SSR and SSG</li>
+    <li><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">TypeScript</a> - Typed JavaScript</li>
+    <li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">Node.js</a> - Runtime Environment</li>
+  </ul>
 
-```
-git clone https://github.com/your_username_/Project-Name.git
-```
+  <hr />
 
-2. Install packeges repeat this step in backend and frontend folder
+  <h2 id="user_story">User Story</h2>
+  <p>Access the Trello board tracking this project:<br />
+    <a href="#">Trello Board</a>
+  </p>
 
-```
-npm i
-```
+  <hr />
 
-3. Run server using git bash inside backend folder
+  <h2 id="data_flow">Data Flow</h2>
+  <p>
+    <img width="300" height="300" src="https://cacoo.com/assets/site/img/templates/screenshots/er-database-diagram.png" alt="Database Schema Diagram" />
+  </p>
 
-```
-npm run dev
-```
+  <hr />
 
-4. Run application using git bash inside frontend folder
+  <h2 id="guided_by">⚠️ Guided By</h2>
+  <p>This project is guided by ©️ <a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">MERAKI Academy</a></p>
 
-```
-npm run start
-```
-
-Now app ready to use
-
-## 🎈 Usage <a name="usage"></a>
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-Ex.
-
-- Navigate through the site freely without signing in.
-- Create an account to access cart and checkout functionalities.
-- Use the Add to Cart button**Add to cart** to select products and proceed to checkout.
-- Admin and providers have dedicated dashboards to manage products, orders, and users.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express JS](https://expressjs.com/) - Server Framework
-- [React JS](https://https://reactjs.org/) - Web Framework
-- [Node JS](https://nodejs.org/en/) - Server Environment
-
-## User Story <a name = "#user_story"></a>
-
-Your trello board link
-<a href='https://trello.com/b/0jNHtD9y/project-4'>Trello</a>
-
-## Data Flow <a name = "#data_flow"></a>
-
-<img width=200px height=200px src="https://files09.oaiusercontent.com/file-LSGKjdZ1KGgUA2c5NkJcdZ?se=2025-05-17T11%3A40%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dd51ff736-6927-42f7-900a-bbf3648c9344.png&sig=lGrRT%2BUPPwz14rWcoMVgEVwi8aonVf5UYNTUZYJouSg%3D" alt="Diagram"></a>
-
-## ⚠️ Guided By <a name = "guided_by"></a>
-
-This project is guided by ©️ **[MERAKI Academy](https://meraki-academy.com/)**
+</body>
+</html>
