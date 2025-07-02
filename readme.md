@@ -85,7 +85,7 @@ Avocado is a full-stack e-commerce platform designed for a seamless shopping exp
   ├── models
   ├── routes
   ├── middleware
-  ├── utils
+  ├── types
 
 /frontend
   ├── app
@@ -116,7 +116,7 @@ Avocado is a full-stack e-commerce platform designed for a seamless shopping exp
 
 | Page                  | Screenshot                      |
 |-----------------------|---------------------------------|
-| Home Page             | ![Home](#)                      |
+| Home Page             | ![Home](![alt text](image.png))                      |
 | Profile Page          | ![Profile](#)                   |
 | Admin Dashboard       | ![Dashboard](#)                 |
 | Product Carousel      | ![Carousel](#)                  |
