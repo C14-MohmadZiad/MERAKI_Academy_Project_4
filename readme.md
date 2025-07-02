@@ -1,4 +1,4 @@
-# 🥑 Avocado E-Commerce Project
+# 🥑 Avocado E-shop Project
 
 > Modern, scalable, and responsive avocado-themed e-commerce platform built with Next.js, TypeScript, Node.js, Express, PostgreSQL (Neon), and MUI.
 
@@ -89,41 +89,41 @@ Avocado is a full-stack e-commerce platform designed for a seamless shopping exp
 
 /frontend
   ├── app
-  │    ├── home
-  │    ├── profile
-  │    ├── cart
-  │    ├── orders
-  │    ├── admin
-  │    │    ├── dashboard
-  │    │    ├── product
-  │    │    ├── category
-  │    │    ├── delivery
-  │    │    ├── users
-  │    │    ├── chat
   │    ├── aboutUs
+  │    ├── admin
+  │    ├── cart
+  │    ├── category
   │    ├── contactUs
+  │    ├── delivery
   │    ├── FavoriteProducts
+  │    ├── home
+  │    ├── orders
+  │    ├── productDetails
+  │    ├── products
+  │    ├── profile
+  │    ├── reset-password
   │    └── search
   ├── components
   ├── globals.css
   ├── layout.tsx
-  └── head.tsx
+  ├── head.tsx
+  ├── favicon.ico
+  └── page.tsx
 ```
 
----
 
 ## 📸 Screenshots
 
 | Page                  | Screenshot                      |
 |-----------------------|---------------------------------|
 | Home Page             | ![Home](![alt text](image.png))                      |
-| Profile Page          | ![Profile](#)                   |
-| Admin Dashboard       | ![Dashboard](#)                 |
-| Product Carousel      | ![Carousel](#)                  |
+| Profile Page          | ![Profile](![alt text](image-1.png))                   |
+| Admin Dashboard       | ![Dashboard](![alt text](image-2.png))                 |
+| Product           | ![Carousel](#)                  |
 | Responsive Sidebar    | ![Sidebar](#)                   |
-| Footer                | ![Footer](#)                    |
+| Footer                | ![Footer](![alt text](image-3.png))                    |
 
-*(Replace `#` with actual screenshot URLs when available.)*
+
 
 ---
 
