@@ -1,189 +1,104 @@
-# 🥑 Avocado E-shop Project
+<p align="center">
+<a href="https://www.meraki-academy.org" target="_blank" rel="noopener noreferrer">
+ <img width="400px" height="100px" src="https://files.oaiusercontent.com/file-BfVXPQAai3qUDLbZqPr3wT?se=2025-05-17T11%3A45%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D4dff5efc-c8f5-4dbe-9a2e-7de0215c9102.png&sig=72SlgUtDrzxosw/CYlQe9ZZJZyfWSzHRSD5z5kNnl%2Bo%3D" alt="Project logo">
+ </a>
+</p>
 
-> Modern, scalable, and responsive avocado-themed e-commerce platform built with Next.js, TypeScript, Node.js, Express, PostgreSQL (Neon), and MUI.
+<h3 align="center">MZ-Store
+</h3>
+
+---
+
+<p align="center"> An awesome Project to describe README 
+    <br> 
+<a href=''>Demo</a>
+    <br> 
+</p>
 
 ## 📝 Table of Contents
+
 - [About](#about)
-- [Features](#features)
-- [Technologies](#technologies)
-- [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
-- [Getting Started](#getting-started)
+- [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Guided By](#guided-by)
+- [Built Using](#built_using)
+- [User Story](#user_story)
+- [Data Flow](#data_flow)
+- [Guided By](#guided_by)
 
----
+## 🧐 About <a name = "about"></a>
 
-## 📖 About
+WMZ-Store is an e-commerce web application designed to offer seamless online shopping experiences. The platform allows users to explore and purchase smart devices, fiber internet services, and mobile devices easily and securely. Users can register with different roles—customer, provider, and admin—each with specific permissions and functionalities tailored to enhance the shopping and management experience.
 
-Avocado is a full-stack e-commerce platform designed for a seamless shopping experience. It supports customer interactions, order management, real-time chat, and an intuitive admin panel for store management.
+The website is professionally designed with an intuitive and responsive user interface, ensuring an exceptional user experience. MZ-Store integrates robust backend services, reliable APIs, and secure database management to provide a smooth, efficient, and secure shopping environment.
 
----
+Ex. Are you looking for a quick and easy way to action, action, and action? The **(name of application)** is the greatest and most accurate application to do this for you. It helps you to **(list of activities)**. The **(name of application)** provides a simple design to ensure having the best user experience.
 
-## ✨ Features
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-### Customer
-- Product browsing and search
-- Product categories
-- Favorites list
-- Shopping cart
-- User profile and order history
-- Real-time customer support chat
-
-### Admin
-- Dashboard with KPIs
-- Product and category management
-- Order management
-- User management
-- Real-time chat with users
-- Sales and orders analytics (charts)
-
-### Authentication & Security
-- JWT-based secure authentication
-- Role-based access control
-
-### Design & UI
-- Responsive design (mobile and desktop)
-- Interactive UI elements with Framer Motion
-- MUI (Material UI and Joy UI)
-
----
-
-## 🛠 Technologies
-
-### Frontend
-- Next.js
-- React
-- TypeScript
-- Material UI (MUI)
-- Joy UI
-- Axios
-- Framer Motion
-- Recharts
-- Socket.IO client
-- React Slick (Carousel)
-- Leaflet & React Leaflet
-
-### Backend
-- Node.js
-- Express.js
-- PostgreSQL (Neon)
-- JWT
-- Socket.IO (real-time chat)
-
-### Tools
-- Visual Studio Code
-- Git & GitHub
-
----
-
-## 📁 Folder Structure
-
-```bash
-/backend
-  ├── controllers
-  ├── models
-  ├── routes
-  ├── middleware
-  ├── types
-
-/frontend
-  ├── app
-  │    ├── aboutUs
-  │    ├── admin
-  │    ├── cart
-  │    ├── category
-  │    ├── contactUs
-  │    ├── delivery
-  │    ├── FavoriteProducts
-  │    ├── home
-  │    ├── orders
-  │    ├── productDetails
-  │    ├── products
-  │    ├── profile
-  │    ├── reset-password
-  │    └── search
-  ├── components
-  ├── globals.css
-  ├── layout.tsx
-  ├── head.tsx
-  ├── favicon.ico
-  └── page.tsx
-```
-
-
-## 📸 Screenshots
-
-| Page                  | Screenshot                      |
-|-----------------------|---------------------------------|
-| Home Page             | ![Home](![alt text](image.png))                      |
-| Profile Page          | ![Profile](![alt text](image-1.png))                   |
-| Admin Dashboard       | ![Dashboard](![alt text](image-2.png))                 |
-| Product           | ![Carousel](#)                  |
-| Responsive Sidebar    | ![Sidebar](#)                   |
-| Footer                | ![Footer](![alt text](image-3.png))                    |
-
-
-
----
-
-## 🚀 Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en)
-- [PostgreSQL (Neon)](https://neon.tech)
-- [Git](https://git-scm.com)
+- Visual Studio Code follow this <a href=''>link</a> to install.
+- Git Bash follow this <a href=''>link</a> to install.
+- MongoDB follow this <a href=''>link</a> to install.
+- Node.js follow this <a href=''>link</a> to install.
 
-### Installation
+### Installing:
 
-Clone the repository:
+1. Clone the repo to your local machine using git bash.
 
-```bash
-git https://github.com/MohmadZiad/MERAKI_Academy_Project_5_Ali.git
+```
+git clone https://github.com/your_username_/Project-Name.git
 ```
 
-Install dependencies:
+2. Install packeges repeat this step in backend and frontend folder
 
-```bash
-# Backend
-cd backend
-npm install
-
-# Frontend
-cd ../frontend
-npm install
+```
+npm i
 ```
 
-Configure environment variables:
-- `.env` file for backend (Database URL, JWT secret)
+3. Run server using git bash inside backend folder
 
-Run servers:
-
-```bash
-# Backend
-npm run dev
-
-# Frontend
+```
 npm run dev
 ```
 
-Open frontend at `http://localhost:3000`
+4. Run application using git bash inside frontend folder
 
----
+```
+npm run start
+```
 
-## 🎯 Usage
+Now app ready to use
 
-- Customers can browse, favorite products, manage cart, and place orders.
-- Admin users manage products, categories, orders, users, and analytics via the admin dashboard.
-- Use real-time chat for customer support and admin communication.
+## 🎈 Usage <a name="usage"></a>
 
----
+Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-## 🏫 Guided By
+Ex.
 
-Developed under guidance from **[MERAKI Academy](https://www.meraki-academy.org)**
+- Navigate through the site freely without signing in.
+- Create an account to access cart and checkout functionalities.
+- Use the Add to Cart button**Add to cart** to select products and proceed to checkout.
+- Admin and providers have dedicated dashboards to manage products, orders, and users.
 
----
+## ⛏️ Built Using <a name = "built_using"></a>
 
-**Developed by Mohammad Ali ©️ 2025**
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Express JS](https://expressjs.com/) - Server Framework
+- [React JS](https://https://reactjs.org/) - Web Framework
+- [Node JS](https://nodejs.org/en/) - Server Environment
+
+## User Story <a name = "#user_story"></a>
+
+Your trello board link
+<a href='https://trello.com/b/0jNHtD9y/project-4'>Trello</a>
+
+## Data Flow <a name = "#data_flow"></a>
+
+<img width=200px height=200px src="https://files09.oaiusercontent.com/file-LSGKjdZ1KGgUA2c5NkJcdZ?se=2025-05-17T11%3A40%3A35Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dd51ff736-6927-42f7-900a-bbf3648c9344.png&sig=lGrRT%2BUPPwz14rWcoMVgEVwi8aonVf5UYNTUZYJouSg%3D" alt="Diagram"></a>
+
+## ⚠️ Guided By <a name = "guided_by"></a>
+
+This project is guided by ©️ **[MERAKI Academy](https://meraki-academy.com/)**
