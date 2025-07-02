@@ -1,99 +1,189 @@
-# Avocado E-Commerce Project
+# 🥑 Avocado E-Commerce Project
 
-[![MERAKI Academy Logo](https://www.meraki-academy.org/assets/img/logov02.svg)](https://www.meraki-academy.org)
-
----
-
-A modern, scalable e-commerce platform built with the latest technologies.  
-[Demo (Coming Soon)]()
+> Modern, scalable, and responsive avocado-themed e-commerce platform built with Next.js, TypeScript, Node.js, Express, PostgreSQL (Neon), and MUI.
 
 ## 📝 Table of Contents
 - [About](#about)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Folder Structure](#folder-structure)
+- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Built Using](#built-using)
-- [User Story](#user-story)
-- [Data Flow](#data-flow)
 - [Guided By](#guided-by)
 
-## 🧐 About
+---
 
-**Why Avocado?**  
-Avocado is designed to deliver a seamless shopping experience using modern web technologies. Built with Next.js and TypeScript on the frontend, and powered by a robust Node.js and Express backend with PostgreSQL (Neon) as the database, it offers scalability, security, and performance. Features like real-time chat support, detailed analytics, and an intuitive admin panel make Avocado a complete solution for online stores.
+## 📖 About
 
-**Benefits:**
-- **Performance & Scalability:** Leveraging Next.js with server-side rendering and PostgreSQL (Neon) for efficient data management.
-- **Type Safety:** Full TypeScript integration across frontend and backend for more reliable code.
-- **User Engagement:** Real-time chat and personalized product recommendations.
-- **Admin Dashboard:** Manage products, categories, orders, and users with ease.
+Avocado is a full-stack e-commerce platform designed for a seamless shopping experience. It supports customer interactions, order management, real-time chat, and an intuitive admin panel for store management.
 
 ---
 
-## 🏁 Getting Started
+## ✨ Features
 
-Follow these instructions to set up the project locally for development and testing.
+### Customer
+- Product browsing and search
+- Product categories
+- Favorites list
+- Shopping cart
+- User profile and order history
+- Real-time customer support chat
+
+### Admin
+- Dashboard with KPIs
+- Product and category management
+- Order management
+- User management
+- Real-time chat with users
+- Sales and orders analytics (charts)
+
+### Authentication & Security
+- JWT-based secure authentication
+- Role-based access control
+
+### Design & UI
+- Responsive design (mobile and desktop)
+- Interactive UI elements with Framer Motion
+- MUI (Material UI and Joy UI)
+
+---
+
+## 🛠 Technologies
+
+### Frontend
+- Next.js
+- React
+- TypeScript
+- Material UI (MUI)
+- Joy UI
+- Axios
+- Framer Motion
+- Recharts
+- Socket.IO client
+- React Slick (Carousel)
+- Leaflet & React Leaflet
+
+### Backend
+- Node.js
+- Express.js
+- PostgreSQL (Neon)
+- JWT
+- Socket.IO (real-time chat)
+
+### Tools
+- Visual Studio Code
+- Git & GitHub
+
+---
+
+## 📁 Folder Structure
+
+```bash
+/backend
+  ├── controllers
+  ├── models
+  ├── routes
+  ├── middleware
+  ├── utils
+
+/frontend
+  ├── app
+  │    ├── home
+  │    ├── profile
+  │    ├── cart
+  │    ├── orders
+  │    ├── admin
+  │    │    ├── dashboard
+  │    │    ├── product
+  │    │    ├── category
+  │    │    ├── delivery
+  │    │    ├── users
+  │    │    ├── chat
+  │    ├── aboutUs
+  │    ├── contactUs
+  │    ├── FavoriteProducts
+  │    └── search
+  ├── components
+  ├── globals.css
+  ├── layout.tsx
+  └── head.tsx
+```
+
+---
+
+## 📸 Screenshots
+
+| Page                  | Screenshot                      |
+|-----------------------|---------------------------------|
+| Home Page             | ![Home](#)                      |
+| Profile Page          | ![Profile](#)                   |
+| Admin Dashboard       | ![Dashboard](#)                 |
+| Product Carousel      | ![Carousel](#)                  |
+| Responsive Sidebar    | ![Sidebar](#)                   |
+| Footer                | ![Footer](#)                    |
+
+*(Replace `#` with actual screenshot URLs when available.)*
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Visual Studio Code - [Download here](https://code.visualstudio.com/)
-- Git - [Download here](https://git-scm.com/downloads)
-- PostgreSQL (Neon) - [Setup Neon DB](https://neon.tech/)
-- Node.js (Latest LTS) - [Download here](https://nodejs.org/en/download/)
 
-### Installation Steps
-1. Clone the repo to your machine:
-    ```bash
-    git clone https://github.com/your_username/avocado-project.git
-    ```
-2. Install dependencies in both `backend` and `frontend` folders:
-    ```bash
-    npm install
-    ```
-3. Set up your PostgreSQL database (Neon) and update environment variables accordingly.
-4. Run the backend server:
-    ```bash
-    npm run dev
-    ```
-5. Run the frontend Next.js app:
-    ```bash
-    npm run dev
-    ```
+- [Node.js](https://nodejs.org/en)
+- [PostgreSQL (Neon)](https://neon.tech)
+- [Git](https://git-scm.com)
 
-Your application should now be running locally.
+### Installation
 
----
+Clone the repository:
 
-## 🎈 Usage
+```bash
+git clone https://github.com/yourusername/avocado-project.git
+```
 
-- Browse products without registering.
-- Register or login to add products to your cart and place orders.
-- Admin users can manage categories, products, users, and view KPIs through the admin panel.
-- Use the real-time chat feature for support.
+Install dependencies:
 
----
+```bash
+# Backend
+cd backend
+npm install
 
-## ⛏️ Built Using
+# Frontend
+cd ../frontend
+npm install
+```
 
-- [PostgreSQL (Neon)](https://www.postgresql.org/) - Cloud Database
-- [Express.js](https://expressjs.com/) - Backend Framework
-- [Next.js](https://nextjs.org/) - React Framework for SSR and SSG
-- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
-- [Node.js](https://nodejs.org/en/) - Runtime Environment
+Configure environment variables:
+- `.env` file for backend (Database URL, JWT secret)
+
+Run servers:
+
+```bash
+# Backend
+npm run dev
+
+# Frontend
+npm run dev
+```
+
+Open frontend at `http://localhost:3000`
 
 ---
 
-## User Story
+## 🎯 Usage
 
-Access the Trello board tracking this project:  
-[Trello Board](#)
-
----
-
-## Data Flow
-
-![Database Schema Diagram](https://cacoo.com/assets/site/img/templates/screenshots/er-database-diagram.png)
+- Customers can browse, favorite products, manage cart, and place orders.
+- Admin users manage products, categories, orders, users, and analytics via the admin dashboard.
+- Use real-time chat for customer support and admin communication.
 
 ---
 
-## ⚠️ Guided By
+## 🏫 Guided By
 
-This project is guided by ©️ [MERAKI Academy](https://www.meraki-academy.org)
+Developed under guidance from **[MERAKI Academy](https://www.meraki-academy.org)**
+
+---
+
+**Developed by Mohammad Ali ©️ 2025**
