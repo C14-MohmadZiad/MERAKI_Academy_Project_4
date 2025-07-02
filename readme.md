@@ -140,7 +140,7 @@ Avocado is a full-stack e-commerce platform designed for a seamless shopping exp
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/avocado-project.git
+git https://github.com/MohmadZiad/MERAKI_Academy_Project_5_Ali.git
 ```
 
 Install dependencies:
